@@ -1,20 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
 
-  background-color:aqua;
-  color:blueviolet
+  background-image: url(../public/base-portada-video-1\ copy.jpg);
+  position: relative;
 }
 
-.NavBar {
+.Navbar {
 
   display: flex; justify-content: center;
-  background-color: rgb(45, 192, 94);
+  background-color: rgb(206, 39, 164);
   color: rgb(206, 26, 26);
-  height: 90px;
+  height: 15%;
   width: 100%;
   font-size:xx-large;
-  font-style: italic;
+  font-family: 'Brush Script MT', cursive;
 
 }
+
+.Homepage {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 
 .Link {
   margin: 20px;
@@ -22,3 +36,41 @@ body {
   text-decoration: none;
   
   }
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.pics {
+  display:flex; justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+  padding: 10px;
+  background-color: blueviolet;
+
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+}
+
+.topics {
+  display:flex; justify-content: center;
+  align-items: center;
+}
+
+
+

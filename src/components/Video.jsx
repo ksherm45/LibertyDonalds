@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Video() {
+function Video(props) {
+  const {btnSubmit} = props
   return (
-    <div>Video</div>
-  )
+<form  className='form' onSubmit={btnSubmit}>
+			<input  name="name"  type="text"  placeholder="Title"/>
+			<input  name="description"  type="text"  placeholder="Post"/>
+			<button  type="submit"  >Submit</button>
+		</form>  )
 }
 
 export default Video
