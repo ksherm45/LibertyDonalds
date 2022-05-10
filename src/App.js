@@ -24,31 +24,37 @@ const navigate = useNavigate()
 
 useEffect(() => {
   const getData = async () => {
-    let response = await axios.get(`${API_URL}/homepage`, {withCredentials: true})
-    setPost(response.data)
-    try{
-      let userResponse = await axios.get(`${API_URL}/user`, {withCredentials: true})
-      setFetchingUser(false)
-      setUser(userResponse.data)
+    let response = await axios.get(`${API_URL}/homepage`, {
+      withCredentials: true,
+    });
+    setPost(response.data);
+    try {
+      let userResponse = await axios.get(`${API_URL}/user`, {
+        withCredentials: true,
+      });
+      setFetchingUser(false);
+      console.log("componenet did mount user", userResponse.data);
+      setUser(userResponse.data);
+    } catch (err) {
+      setFetchingUser(false);
     }
-    catch(err){
-      setFetchingUser(false)
-    }
-  }
-  getData()
-}, [])
+  };
+  getData();
+}, []);
 
 const handleSubmit = async (event) => {
-  event.preventDefault()
+  event.preventDefault();
+  console.log(user, "hererererere3");
   let newPost = {
     name: event.target.name.value,
     description: event.target.description.value,
-  }
-  console.log(newPost)
-  let response = await axios.post('http://localhost:5005/api/post', newPost) // save this in a variable and put it into the .env file for deployment
-  setPost([response.data, ...posts])
-  navigate('/homepage')
-}
+    owner: user._id,
+  };
+  console.log(newPost);
+  let response = await axios.post("http://localhost:5005/api/post", newPost); // save this in a variable and put it into the .env file for deployment
+  setPost([response.data, ...posts]);
+  navigate("/homepage");
+};
 
 const handleEdit = async (event, id) => {
   event.preventDefault()
@@ -119,13 +125,13 @@ const handleLogout = async () => {
 
     <Routes>
 
-    <Route path="/Audio" element={<Audio btnSubmit={handleSubmit}/> } />
-    <Route path="/Audio" element={<Audio btnAddProfile={handleAddProfile}/>} />
+    <Route path="/Audio" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/Video" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/Pods" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
 
+
+    <Route path="/" element={<Homepage/>} />
     <Route path="/homepage" element={<Homepage/>} />
-    <Route path="/Audio" element={<Audio/>} />
-    <Route path="/Video" element={<Video/>} />
-    <Route path="/Pods" element={<Pods/>} />
     <Route path="/Library" element={<Library/> } />
     <Route path='/signin' element={<SignIn onSignIn={handleSignIn} />}   />
     <Route path='/signup' element={<SignUp />} /> 

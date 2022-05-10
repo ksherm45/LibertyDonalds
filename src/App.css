@@ -10,7 +10,8 @@ body {
 
 .Navbar {
 
-  display: flex; justify-content: center;
+  display: flex;
+  justify-content: center;
   background-color: rgb(206, 39, 164);
   color: rgb(206, 26, 26);
   height: 15%;
@@ -52,7 +53,8 @@ body {
 }
 
 .pics {
-  display:flex; justify-content: center;
+  display:flex; 
+  justify-content: center;
   align-items: center;
   height: 50%;
   width: 50%;
@@ -68,9 +70,22 @@ h1 {
 }
 
 .topics {
-  display:flex; justify-content: center;
+  display:flex; 
+  justify-content: center;
   align-items: center;
 }
 
 
 
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.post-card {
+  background-color: aliceblue;
+  margin: 30px;
+  padding: 20px;
+}
