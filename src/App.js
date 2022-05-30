@@ -8,11 +8,13 @@ import Video from './components/Video';
 import Library from './components/Library';
 import Homepage from './components/Homepage';
 import SignIn from './components/SignIn';
+import Vidz from './components/Vidz'
 import SignUp from './components/SignUp';
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import {API_URL} from './config';
+import Test from './components/Test';
 
 
 function App() {
@@ -44,17 +46,35 @@ useEffect(() => {
 
 const handleSubmit = async (event) => {
   event.preventDefault();
-  console.log(user, "hererererere3");
   let newPost = {
     name: event.target.name.value,
     description: event.target.description.value,
+    youtube: event.target.youtube.value,
+    //image: event.target.audio.value,
     owner: user._id,
   };
-  console.log(newPost);
+  if(event.target.youtube.value){
+    let videoPage = event.target.youtube.value
+	
+			let arr = videoPage.split(' ')
+			let src = ""
+			
+			for(let i = 0; i<arr.length; i++){
+			 if(arr[i].indexOf('src') !== -1)
+			   src = arr[i]
+	}
+			let http = src.split('=')[1]
+	
+			let youtubeSrc = http.slice(1,http.length-1)
+			newPost.youtube = youtubeSrc
+}
+  
+  
   let response = await axios.post("http://localhost:5005/api/post", newPost); // save this in a variable and put it into the .env file for deployment
   setPost([response.data, ...posts]);
+  console.log(response.data);
   navigate("/homepage");
-};
+}; 
 
 const handleEdit = async (event, id) => {
   event.preventDefault()
@@ -126,10 +146,10 @@ const handleLogout = async () => {
     <Routes>
 
     <Route path="/Audio" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
-    <Route path="/Video" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
-    <Route path="/Pods" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
-
-
+    <Route path="/Video" element={<Video btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/Pods" element={<Pods btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/test" element={<Test btnSubmit={handleSubmit} btnAddProfile={handleAddProfile} />} />
+    <Route path="/vidz" element={<Vidz/>} />
     <Route path="/" element={<Homepage/>} />
     <Route path="/homepage" element={<Homepage/>} />
     <Route path="/Library" element={<Library/> } />
