@@ -5,15 +5,6 @@ import axios from "axios";
 function Video({ btnSubmit, btnAddProfile }) {
 	// we get this postId from the <Route path='/post/:postId'> we defined in App.js
 	const [videoPage, setVideoPage] = useState(null);
-// 	let iframe = '<iframe width=“560” height=“315" src=“https://www.youtube.com/embed/x8hnpaslXHU” title=“YouTube video player” frameborder=“0” allow=“accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>'
-// let arr = iframe.split('')
-// let src = ""
-// for(let i = 0; i<arr.length; i++){
-//   if(arr[i].indexOf('src') !== -1)
-//     src = arr[i]
-// }
-// let http = src.split('=')[1]
-// console.log(http.slice(1,http.length-1))
 
 	useEffect(() => {
 	  const getData = async () => {

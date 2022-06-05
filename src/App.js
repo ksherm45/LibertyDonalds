@@ -44,6 +44,32 @@ useEffect(() => {
   getData();
 }, []);
 
+const handleSubmitAudio = async (event) => {
+  event.preventDefault();
+  console.log("pic pic pic")
+
+  let img = event.target.image.files[0]
+  let formData = new FormData()
+
+  formData.append("image" , img)
+  formData.append("name" ,  event.target.name.value)
+  formData.append("description" , event.target.description.value)
+  formData.append("owner" , user._id)
+
+  // let newPost = {
+  //   name: event.target.name.value,
+  //   description: event.target.description.value,
+  //   image: event.target.image.value,
+  //   owner: user._id,
+  // };
+  
+  let response = await axios.post("http://localhost:5005/api/uploadFile", formData); // save this in a variable and put it into the .env file for deployment
+  setPost([response.data, ...posts]);
+  console.log(response.data);
+  navigate("/homepage");
+}; 
+
+
 const handleSubmit = async (event) => {
   event.preventDefault();
   let newPost = {
@@ -145,7 +171,7 @@ const handleLogout = async () => {
 
     <Routes>
 
-    <Route path="/Audio" element={<Audio btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/Audio" element={<Audio btnSubmit={handleSubmitAudio} btnAddProfile={handleAddProfile}/> } />
     <Route path="/Video" element={<Video btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/Pods" element={<Pods btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/test" element={<Test btnSubmit={handleSubmit} btnAddProfile={handleAddProfile} />} />

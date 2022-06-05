@@ -8,7 +8,7 @@ function Audio({ btnSubmit, btnAddProfile }) {
 
   useEffect(() => {
     const getData = async () => {
-      let response = await axios.get(`http://localhost:5005/api/get-posts`);
+      let response = await axios.get(`http://localhost:5005/api/get-images`);
       console.log("here is the audio", response.data);
       setaudioPage(response.data);
     };
@@ -33,6 +33,7 @@ function Audio({ btnSubmit, btnAddProfile }) {
           ? audioPage.map((elem, i) => {
               return (
                 <div key={elem.name + i} className="post-card">
+                {elem.image ? <img src={elem.image} alt="purrr" /> : null  }
                   <h3>{elem.name}</h3>
                   <h5>{elem.description}</h5>
                 </div>
