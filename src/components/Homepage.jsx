@@ -33,6 +33,7 @@ function Homepage({ btnSubmit, btnAddProfile }) {
                 <div key={elem.name + i} className="post-card">
                   <h3>{elem.name}</h3>
                   <h5>{elem.description}</h5>
+                  {elem.youtube ? <iframe  width="560" height="315" src={elem.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe> : null }
                 </div>
               );
             })
