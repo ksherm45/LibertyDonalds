@@ -8,8 +8,9 @@ import Video from './components/Video';
 import Library from './components/Library';
 import Homepage from './components/Homepage';
 import SignIn from './components/SignIn';
-import Vidz from './components/Vidz'
 import SignUp from './components/SignUp';
+import SingleAudio from './components/SingleAudio';
+import SingleVideo from './components/SingleVideo'
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
@@ -35,7 +36,6 @@ useEffect(() => {
         withCredentials: true,
       });
       setFetchingUser(false);
-      console.log("componenet did mount user", userResponse.data);
       setUser(userResponse.data);
     } catch (err) {
       setFetchingUser(false);
@@ -172,10 +172,11 @@ const handleLogout = async () => {
     <Routes>
 
     <Route path="/Audio" element={<Audio btnSubmit={handleSubmitAudio} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/audio/:audioId" element={<SingleAudio btnAddProfile={handleAddProfile} btnDelete={handleDelete} />} />
+    <Route path="/video/:videoId" element={<SingleVideo btnAddProfile={handleAddProfile} btnDelete={handleDelete} />} />
     <Route path="/Video" element={<Video btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/Pods" element={<Pods btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/test" element={<Test btnSubmit={handleSubmit} btnAddProfile={handleAddProfile} />} />
-    <Route path="/vidz" element={<Vidz/>} />
     <Route path="/" element={<Homepage/>} />
     <Route path="/homepage" element={<Homepage/>} />
     <Route path="/Library" element={<Library/> } />
