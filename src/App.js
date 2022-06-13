@@ -181,7 +181,7 @@ const handleLogout = async () => {
     <Route path="/audio/:audioId" element={<SingleAudio btnAddProfile={handleAddProfile} btnDelete={handleDelete} />} />
     <Route path="/video/:videoId" element={<SingleVideo btnAddProfile={handleAddProfile} btnDelete={handleDelete} />} />
     <Route path="/Video" element={<Video btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
-    <Route path="/Pods" element={<Pods btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
+    <Route path="/Pods" element={<Pods btnAudioSubmit={handleSubmitAudio} btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/" element={<Homepage/>} />
     <Route path="/homepage" element={<Homepage/>} />
     <Route path="/Library" element={<Library/> } />

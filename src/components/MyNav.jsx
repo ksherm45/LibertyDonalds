@@ -8,29 +8,35 @@ require('../App.css')
 function MyNav(props) {
 
 const {user, Logout} = props
+const image = require("../components/liberty-donaldsMesa-de-trabajo-11.png")
 
   return (
 
     <Navbar className='Navbar'  bg="dark"  expand="lg">
 		
-		<Navbar.Collapse  id="basic-navbar-nav">
-    <Nav className='mr-auto'>
-    <Link className='Link' to="/">Home</Link>    
-    <Link  className='Link' to="/Audio">Audio</Link>
-    <Link className='Link' to="/Video">Video</Link> 
-    <Link className='Link' to="/Pods">Pods</Link>    
-    <Link className='Link' to="/Library">Library</Link>    
-    </Nav>
-    </Navbar.Collapse>
+    <Nav>
+    <Link className='Link' to="/">HOME</Link>    
+    <Link  className='Link' to="/Audio">AUDIO</Link>
+    <Link className='Link' to="/Video">VIDEO</Link> 
+    <Link className='Link' to="/Pods">PODS</Link>    
+    <Link className='Link' to="/Library">LIBRARY</Link> 
+     </Nav>
+
+     <div className='logo'>
+     
+    <img src={image} height={200} width={200}  alt="logo" />  
     
-    { !user ? (
+    </div> 
+    
+    
+    {/* { !user ? (
 				<div>
 						<Link  className='Link' to="/signin">SignIn</Link>
 						<Link className='Link'  to="/signup">SignUp</Link>
 					</div> ) : (
 
 						<Button  variant="contained" color="secondary" onClick={Logout}>Logout</Button> )
-}
+} */}
 
   </Navbar>					
   )

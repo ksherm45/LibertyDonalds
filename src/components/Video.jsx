@@ -26,7 +26,7 @@ function Video({ btnSubmit, btnAddProfile }) {
   
 	return (
 	  <div>
-		<form className="form" onSubmit={btnSubmit}>
+		{/* <form className="form" onSubmit={btnSubmit}>
 		
 		  <input name="name" type="text" placeholder="Title" />
 		
@@ -35,7 +35,7 @@ function Video({ btnSubmit, btnAddProfile }) {
 		  <input name="youtube" type="text" placeholder="Youtube" />
 
 		  <button type="submit">Submit</button>
-		</form>
+		</form> */}
 
 		<div className="card">
 		  {videoPage
@@ -44,13 +44,13 @@ function Video({ btnSubmit, btnAddProfile }) {
 
 				  <div key={elem.name + i} className="card-body">
 					<h3 className="card-name">{elem.name}</h3>
+										
+				{elem.youtube ? <iframe  width="560" height="315" src={elem.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe> : null }
+
 					<Text ellipsizeMode='tail' numberOfLines={2} >
                   <div  className="card-description">{elem.description}
                   </div>
-                  </Text>					
-					
-				{elem.youtube ? <iframe  width="560" height="315" src={elem.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe> : null }
-					
+                  </Text>	
 
 				<div key={elem._id} >
                             <Link to={`/video/${elem._id}`}>

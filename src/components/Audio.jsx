@@ -23,12 +23,12 @@ function Audio({ btnSubmit, btnAddProfile }) {
 
   return (
     <div >
-      <form className="form" onSubmit={btnSubmit}>
+      {/* <form className="form" onSubmit={btnSubmit}>
         <input name="name" type="text" placeholder="Title" />
         <input name="description" type="text" placeholder="Post" />
         <input name="image" type="file" placeholder="image" />  
           <button type="submit">Submit</button>
-      </form>
+      </form> */}
 
       <div className="card">
         {audioPage

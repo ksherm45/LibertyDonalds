@@ -7,25 +7,36 @@ body {
   background-color:#89c6bf;
   position: relative;
 }
+
+/* .logo{
+  height: 10%;
+  width: 10%;
+} */
 .icons {
   display: flex; justify-content: space-evenly;
   padding-top: 5%;
   position:fixed;
-  bottom: 0.5em;;
+  bottom: 0.5em;
+}
+
+.mr-4 {
+
+  height: 50%;
 }
 
 .Navbar {
 
   display: flex;
   justify-content: center;
-  background-color: rgb(206, 39, 164);
+  align-items: center;
+  background-color: #cc8696;
   color: rgb(206, 26, 26);
   height: 10%;
   width: 100%;
   font-size:xx-large;
-  font-family: 'Brush Script MT', cursive;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   position: fixed;
-  
+  z-index: 1100;
 
 }
 
@@ -41,8 +52,9 @@ body {
 
 .Link {
   margin: 20px;
-  color: black;
+  color: whitesmoke;
   text-decoration: none;
+  
   
   }
 
@@ -52,6 +64,34 @@ body {
   align-items: center;
   margin-top: 3rem;
   flex-direction: column;
+ 
+}
+
+.comment {
+
+  width: 60%;
+  height: 60%;
+}
+
+.formAudio {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.7rem;
+  flex-direction: column;
+  height: 200px;
+  width: 100%;
+}
+
+.form-page {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  flex-direction: column;
+
 }
 
 .flex {
@@ -68,7 +108,7 @@ body {
   height: 50%;
   width: 50%;
   padding: 10px;
-  background-color: blueviolet;
+  background-color: #cc8696;
 
 }
 
@@ -111,6 +151,7 @@ h1 {
   position: relative;
   width: 50%;
   margin: 10px;
+  margin-top: 5%;
 
 }
 
@@ -142,7 +183,7 @@ h1 {
 
 .card-button {
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid blueviolet;
   padding: 5px;
   display: flex;
   font-size: 20px;
@@ -163,7 +204,7 @@ h1 {
   transition: 0.5s;
 }
 #neon:hover {
-  background: blueviolet;
+  background: #cc8696;
   color: #111;
   box-shadow: 0 0 50px blueviolet;
 }
@@ -196,3 +237,4 @@ h1 {
   width: 100%;
   height: 100%;
 }
+
