@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {Text} from 'react-native';
 
 function Audio({ btnSubmit, btnAddProfile }) {
   // we get this postId from the <Route path='/post/:postId'> we defined in App.js
@@ -21,24 +22,34 @@ function Audio({ btnSubmit, btnAddProfile }) {
   }
 
   return (
-    <div>
+    <div >
       <form className="form" onSubmit={btnSubmit}>
         <input name="name" type="text" placeholder="Title" />
         <input name="description" type="text" placeholder="Post" />
-        <label>Audio</label>
         <input name="image" type="file" placeholder="image" />  
           <button type="submit">Submit</button>
       </form>
-      <div className="center">
+
+      <div className="card">
         {audioPage
           ? audioPage.map((elem, i) => {
               return (
-                <div key={elem.name + i} className="post-card">
-                {elem.image ? <img src={elem.image} alt="purrr" /> : null  }
-                  <h3>{elem.name}</h3>
-                  <h5>{elem.description}</h5>
-                  <div key={elem._id} className = "BallDecoraction" style={{backgroundColor:elem.ballColor}} >
-                            <Link to={`/audio/${elem._id}`}>{elem.name}</Link>
+                
+                <div key={elem.name + i} className="card-body">
+                <h3 className="card-name">{elem.name}</h3>
+                {elem.image ? 
+                <div className="images">
+                <img   src={elem.image} height={315} width={560} alt="pic"/>
+                </div>
+                 : null  }
+                  <Text ellipsizeMode='tail' numberOfLines={4} >
+                  <div  className="card-description">{elem.description}
+                  </div>
+                  </Text>
+                  <div key={elem._id}>
+                            <Link to={`/audio/${elem._id}`}>
+                            <button className="card-btn" id='neon'>Read More!</button>
+                            </Link>
                             
                         </div>  
                 </div>
@@ -47,6 +58,7 @@ function Audio({ btnSubmit, btnAddProfile }) {
           : null}
       </div>
     </div>
+   
   );
 }
 

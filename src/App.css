@@ -4,8 +4,14 @@
 
 body {
 
-  background-image: url(../public/base-portada-video-1\ copy.jpg);
+  background-color:#89c6bf;
   position: relative;
+}
+.icons {
+  display: flex; justify-content: space-evenly;
+  padding-top: 5%;
+  position:fixed;
+  bottom: 0.5em;;
 }
 
 .Navbar {
@@ -14,10 +20,12 @@ body {
   justify-content: center;
   background-color: rgb(206, 39, 164);
   color: rgb(206, 26, 26);
-  height: 15%;
+  height: 10%;
   width: 100%;
   font-size:xx-large;
   font-family: 'Brush Script MT', cursive;
+  position: fixed;
+  
 
 }
 
@@ -44,7 +52,6 @@ body {
   align-items: center;
   margin-top: 3rem;
   flex-direction: column;
-  background-color: chartreuse;
 }
 
 .flex {
@@ -77,23 +84,115 @@ h1 {
   align-items: center;
 }
 
+.Audio{
+  display: flex; 
+  justify-content: space-evenly;
+  margin: 2em;
 
+}
 
-.center {
-  width: 100%;
+.card {
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-.post-card {
-  background-color: aliceblue;
-  margin: 30px;
-  padding: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  
 }
 
-h3 {
+.card-body{
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 50%;
+  margin: 10px;
 
-text-align: center;
-font-size: 200%;
+}
+
+
+.card-name {
+  font-size: 3rem;
+  margin: 1rem
+
+}
+
+.images {
+
+  padding-bottom: 1.3rem;
+ 
+}
+
+.card-description{
+  background-color: white;
+  border-style:solid;
+  border-width: thick ;
+  border-color: blueviolet;
+  font-size: large;
+  width: 560px;
+  text-align: center;
+  
+  
+  
+}
+
+.card-button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 5px;
+  display: flex;
+  font-size: 20px;
+  margin: 1px 5px 1px 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: underline;
+  border-radius: 10px;
+}
+
+#neon {
+  position: relative;
+  padding: 10px 10px;
+  margin: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+#neon:hover {
+  background: blueviolet;
+  color: #111;
+  box-shadow: 0 0 50px blueviolet;
+}
+#neon:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid rgb(255, 5, 226);
+  border-left: 2px solid rgb(255, 5, 226); 
+  transition: 0.5s;
+}
+#neon:hover:before {
+  width: 100%;
+  height: 100%;
+}
+#neon:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid rgb(255, 5, 226);
+  border-right: 2px solid rgb(255, 5, 226); 
+  transition: 0.5s;
+}
+#neon:hover:after {
+  width: 100%;
+  height: 100%;
 }

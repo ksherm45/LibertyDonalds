@@ -10,12 +10,12 @@ import Homepage from './components/Homepage';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import SingleAudio from './components/SingleAudio';
-import SingleVideo from './components/SingleVideo'
+import SingleVideo from './components/SingleVideo';
+import Footer from './components/Footer';
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import {API_URL} from './config';
-import Test from './components/Test';
 
 
 function App() {
@@ -150,6 +150,12 @@ const handleSignIn = async (event) => {
   }
 }
 
+const checkSignIn = async (event) => {
+  event.preventDefault()
+  axios.get('http:localhost:5005/api/user')
+
+}
+
 const handleAddProfile = async (event, id, name, desc) => {
   event.preventDefault()
   console.log("handle add test", event, id, name, desc)
@@ -168,7 +174,7 @@ const handleLogout = async () => {
   return (
     <div>
     <MyNav/>
-
+    
     <Routes>
 
     <Route path="/Audio" element={<Audio btnSubmit={handleSubmitAudio} btnAddProfile={handleAddProfile}/> } />
@@ -176,15 +182,20 @@ const handleLogout = async () => {
     <Route path="/video/:videoId" element={<SingleVideo btnAddProfile={handleAddProfile} btnDelete={handleDelete} />} />
     <Route path="/Video" element={<Video btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
     <Route path="/Pods" element={<Pods btnSubmit={handleSubmit} btnAddProfile={handleAddProfile}/> } />
-    <Route path="/test" element={<Test btnSubmit={handleSubmit} btnAddProfile={handleAddProfile} />} />
     <Route path="/" element={<Homepage/>} />
     <Route path="/homepage" element={<Homepage/>} />
     <Route path="/Library" element={<Library/> } />
     <Route path='/signin' element={<SignIn onSignIn={handleSignIn} />}   />
     <Route path='/signup' element={<SignUp />} /> 
 
-
+  
     </Routes>
+
+    <div className='footer'>
+    <Footer/>
+    </div>
+
+    
 
     </div>
   );

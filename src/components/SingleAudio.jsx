@@ -26,10 +26,13 @@ function SingleAudio(props) {
     
     return(
 
-            <div >
-            <h4 className='innerText'>Name: {audioDetail.name}</h4>
-            <h4 className='innerText'>Desc: {audioDetail.description}</h4>
-            <img src= {audioDetail.image} alt = "josh is my hero"/>
+            <div>
+            <div>
+            <img src= {audioDetail.image} height={300} width={300}  alt = "josh is my hero"/>
+            </div>
+            <h4 className='innerText'> {audioDetail.name}</h4>
+            <h4 className='innerText'> {audioDetail.description}</h4>
+        
             </div>
           );
         
