@@ -8,10 +8,10 @@ body {
   position: relative;
 }
 
-/* .logo{
-  height: 10%;
-  width: 10%;
-} */
+.logo{
+  top: 0;
+  right: 10;
+}
 .icons {
   display: flex; justify-content: space-evenly;
   padding-top: 5%;
@@ -55,7 +55,15 @@ body {
   color: whitesmoke;
   text-decoration: none;
   
-  
+  }
+
+  .Link:hover {
+
+    color: #89c6bf;
+    border-radius: 15px;
+   
+    transition: ease-in;
+    
   }
 
 .form {
@@ -155,6 +163,19 @@ h1 {
 
 }
 
+.card-body-single{
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 90%;
+  margin: 10px;
+  margin-top: 5%;
+
+}
+
 
 .card-name {
   font-size: 3rem;
@@ -177,7 +198,16 @@ h1 {
   width: 560px;
   text-align: center;
   
-  
+}
+
+.card-description-single{
+  background-color: white;
+  border-style:solid;
+  border-width: thick ;
+  border-color: blueviolet;
+  font-size: large;
+  width: 100%;
+  text-align: center;
   
 }
 

@@ -26,10 +26,13 @@ function SingleVideo(props) {
     
     return(
 
-            <div >
-            <h4 className='innerText'>Name: {videoDetail.name}</h4>
-            <h4 className='innerText'>Desc: {videoDetail.description}</h4>
-            <iframe  width="560" height="315" src={videoDetail.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe>            </div>
+            <div className='card'>
+            <div className='card-body-single'>
+            <h4 className='card-name'>{videoDetail.name}</h4>
+          <iframe  width="560" height="315" src={videoDetail.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe>            
+            <h4 className='card-description-single'>Desc: {videoDetail.description}</h4>
+            </div>
+            </div>
           );
         
       

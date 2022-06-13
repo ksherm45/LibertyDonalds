@@ -12,7 +12,7 @@ function Footer() {
               className="mr-4"
               target="_blank"
               fgColor="#fff"
-              style={{ height: 65, width: 65 }}
+              style={{ height: 50, width: 50 }}
             />
       
       <SocialIcon
@@ -20,7 +20,7 @@ function Footer() {
               className="mr-4"
               target="_blank"
               fgColor="#fff"
-              style={{ height: 65, width: 65 }}
+              style={{ height: 50, width: 50 }}
             />
 
        <SocialIcon
@@ -28,7 +28,7 @@ function Footer() {
               className="mr-4"
               target="_blank"
               fgColor="#fff"
-              style={{ height: 65, width: 65 }}
+              style={{ height: 50, width: 50 }}
                />
 
         <SocialIcon
@@ -36,7 +36,7 @@ function Footer() {
               className="mr-4"
               target="_blank"
               fgColor="#fff"
-              style={{ height: 65, width: 65 }}
+              style={{ height: 50, width: 50 }}
                />
 
         <SocialIcon
@@ -44,7 +44,7 @@ function Footer() {
               className="mr-4"
               target="_blank"
               fgColor="#fff"
-              style={{ height: 65, width: 65 }}
+              style={{ height: 50, width: 50 }}
                />
        </div>
     
