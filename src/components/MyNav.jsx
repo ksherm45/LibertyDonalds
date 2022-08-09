@@ -16,7 +16,7 @@ const pic = require("../components/base-portada-video-2 copy.jpg")
 		
     <div >
      <Link to="/">
-     <img className="logo" src={image} height={200} width={200} alt="logo" />  
+     <img className="logo" src={image}  alt="logo" />  
      </Link>
      </div> 
 
@@ -24,12 +24,11 @@ const pic = require("../components/base-portada-video-2 copy.jpg")
     <Link className='Link' to="/">HOME</Link>    
     <Link  className='Link' to="/Audio">AUDIO</Link>
     <Link className='Link' to="/Video">VIDEO</Link> 
-    <Link className='Link' to="/Pods">PODS</Link>    
      </Nav>
 
-     <div className='logo' >
+     <div  >
      <Link to="/">
-     <img className="logo" src={pic} height={82} width={200} alt="logo" />  
+     <img className="logo2" src={pic}  alt="logo" />  
      </Link>
      </div> 
      

@@ -36,7 +36,9 @@ function Audio({ btnSubmit, btnAddProfile }) {
               return (
                 
                 <div key={elem.name + i} className="card-body">
+                <Link to={`/audio/${elem._id}`}>
                 <h3 className="card-name">{elem.name}</h3>
+                </Link>
                 {elem.image ? 
                 <div className="images">
                 <img   src={elem.image} height={315} width={560} alt="pic"/>

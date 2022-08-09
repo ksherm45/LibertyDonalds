@@ -43,7 +43,9 @@ function Video({ btnSubmit, btnAddProfile }) {
 				return (
 
 				  <div key={elem.name + i} className="card-body">
-					<h3 className="card-name">{elem.name}</h3>
+				  <Link to={`/video/${elem._id}`}>
+				<h3 className="card-name">{elem.name}</h3>
+				</Link>
 										
 				{elem.youtube ? <iframe  width="560" height="315" src={elem.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen > </iframe> : null }
 

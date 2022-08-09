@@ -8,9 +8,17 @@ body {
   position: relative;
 }
 
+.logo2{
+  height: 3.5rem;
+  width: 11.8rem;
+  position: relative;
+  }
+
 .logo{
-  top: 0;
-  right: 10;
+  height: 13.5rem;
+  width: 11.8rem;
+  position: relative;
+  
 }
 .icons {
   display: flex; justify-content: space-evenly;
@@ -28,6 +36,7 @@ body {
 
   display: flex;
   justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: #cc8696;
   color: rgb(206, 26, 26);
@@ -75,11 +84,6 @@ body {
  
 }
 
-.comment {
-
-  width: 60%;
-  height: 60%;
-}
 
 .formAudio {
   background-color: white;
@@ -179,8 +183,14 @@ h1 {
 
 .card-name {
   font-size: 3rem;
-  margin: 1rem
+  margin: 1rem;
+  text-decoration: underline;
+  color: #111;
 
+}
+
+.card-name:hover {
+  color: blueviolet;
 }
 
 .images {
@@ -236,7 +246,7 @@ h1 {
 #neon:hover {
   background: #cc8696;
   color: #111;
-  box-shadow: 0 0 50px blueviolet;
+  box-shadow: 0 0 10px blueviolet;
 }
 #neon:before {
   position: absolute;
@@ -244,8 +254,8 @@ h1 {
   left: 0;
   width: 10px;
   height: 10px;
-  border-top: 2px solid rgb(255, 5, 226);
-  border-left: 2px solid rgb(255, 5, 226); 
+  border-top: 2px solid #cc8696;
+  border-left: 2px solid #cc8696; 
   transition: 0.5s;
 }
 #neon:hover:before {
@@ -259,8 +269,8 @@ h1 {
   right: 0;
   width: 10px;
   height: 10px;
-  border-bottom: 2px solid rgb(255, 5, 226);
-  border-right: 2px solid rgb(255, 5, 226); 
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet; 
   transition: 0.5s;
 }
 #neon:hover:after {
